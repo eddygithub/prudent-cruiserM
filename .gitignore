@@ -9,6 +9,8 @@
 *.ear
 .project
 .classpath
+*.lock
+*.bin
 
 /build/
 /gradle/
@@ -16,3 +18,4 @@
 **/build/
 **/gradle/
 **/.grale/
+/bin/
