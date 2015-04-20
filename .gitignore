@@ -12,10 +12,9 @@
 *.lock
 *.bin
 
+
 /build/
 /gradle/
-.gradle/**
-**/build/
-**/gradle/
-**/.grale/
+.gradle/
+/.settings/
 /bin/
