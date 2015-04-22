@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:si="http://www.springframework.org/schema/integration"
+	xmlns:si-file="http://www.springframework.org/schema/integration/file"
+	xmlns:si-mail="http://www.springframework.org/schema/integration/mail"
+	xmlns:si-stream="http://www.springframework.org/schema/integration/stream"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/integration
+			http://www.springframework.org/schema/integration/spring-integration.xsd
+			http://www.springframework.org/schema/integration/mail
+			http://www.springframework.org/schema/integration/mail/spring-integration-mail.xsd
+			http://www.springframework.org/schema/integration/stream
+			http://www.springframework.org/schema/integration/stream/spring-integration-stream.xsd
+			http://www.springframework.org/schema/integration/file
+			http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
+
+	<si-file:inbound-channel-adapter directory="/tmp/si/" channel="files">
+		<si:poller fixed-rate="1000">
+		</si:poller>
+	</si-file:inbound-channel-adapter>
+
+	<si:channel id="files" />
+
+	<si:service-activator method="process" output-channel="output"
+		input-channel="files">
+		<bean class="com.prudent.office.file.service.FileServiceImpl"></bean>
+	</si:service-activator>
+	
+	<si:channel id="output"/>
+</beans>

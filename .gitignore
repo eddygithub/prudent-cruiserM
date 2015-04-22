@@ -11,10 +11,14 @@
 .classpath
 *.lock
 *.bin
+.springBeans
 
-
+/.metadata/
+/Servers/
 /build/
 /gradle/
 .gradle/
 /.settings/
+/.settings/gradle/
+**/.settings/
 /bin/
