@@ -15,17 +15,27 @@
 			http://www.springframework.org/schema/integration/file
 			http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
 
-	<si-file:inbound-channel-adapter directory="/tmp/si/" channel="files">
-		<si:poller fixed-rate="1000">
-		</si:poller>
+
+	<si-file:inbound-channel-adapter directory="/tmp/si/" channel="filesFiles">
+		<si:poller fixed-rate="1000"/>
 	</si-file:inbound-channel-adapter>
 
-	<si:channel id="files" />
+	<si:channel id="filesFiles" />
 
-	<si:service-activator method="process" output-channel="output"
-		input-channel="files">
-		<bean class="com.prudent.office.file.service.FileServiceImpl"></bean>
-	</si:service-activator>
+	<si:header-enricher input-channel="filesFiles" output-channel="stamped">
+		<si:header name="sender" value="#{ systemProperties['user.name'] }" />
+	</si:header-enricher>
 	
-	<si:channel id="output"/>
+	<si:channel id="stamped">
+		<si:queue/>	
+	</si:channel>
+
+	<si:service-activator method="process" output-channel="output" input-channel="stamped">
+		<bean class="com.prudent.office.file.service.FileServiceImpl"/>
+		<si:poller fixed-rate="1000"></si:poller>
+	</si:service-activator>
+
+	<si:channel id="output">
+		<si:queue/>
+	</si:channel>
 </beans>

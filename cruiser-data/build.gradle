@@ -1,11 +1,11 @@
 dependencies{
-	compile project (':cruiser-model')
 	compile("org.springframework.data:spring-data-gemfire:1.6.0.RELEASE")
 	compile("com.gemstone.gemfire:gemfire:8.1.0")
-	
+
 	repositories{
 		maven{
 			url "http://repo.spring.io/gemstone-release-cache/"
 		}
 	}
+	compile("org.springframework.data:spring-data-jpa:1.8.0.RELEASE")
 }

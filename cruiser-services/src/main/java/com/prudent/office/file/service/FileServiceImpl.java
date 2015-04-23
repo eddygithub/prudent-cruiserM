@@ -9,5 +9,4 @@ public class FileServiceImpl implements FileService {
 		msg.getPayload().toString();
 		System.out.println("Got file");
 	}
-
 }
