@@ -1,8 +1,8 @@
-package com.prudent.office.data.store.es.repository;
+package com.prudent.data.customerData.es.repository;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import com.prudent.customerDB.domain.Customer;
+import com.prudent.data.customerDB.domain.Customer;
 
 public interface CustomerRepository extends ElasticsearchRepository<Customer, String>{
 	

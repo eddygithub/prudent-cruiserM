@@ -1,5 +1,6 @@
 rootProject.name = 'cruiserM'
 include 'cruiser-ui'
-include 'cruiser-model'
+include 'cruiser-persistence'
 include 'cruiser-data'
 include 'cruiser-services'
+include 'cruiser-mobile'

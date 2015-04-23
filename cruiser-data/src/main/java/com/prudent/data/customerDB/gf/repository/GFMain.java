@@ -1,4 +1,4 @@
-package com.prudent.office.data.gf;
+package com.prudent.data.customerDB.gf.repository;
 
 import com.gemstone.gemfire.cache.Cache;
 import com.gemstone.gemfire.cache.CacheFactory;

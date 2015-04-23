@@ -1,4 +1,4 @@
-package com.prudent.office.data.store.es;
+package com.prudent.data.customerData.es;
 
 import org.elasticsearch.node.NodeBuilder;
 import org.springframework.context.annotation.Bean;
