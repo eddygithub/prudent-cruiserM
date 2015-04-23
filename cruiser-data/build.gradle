@@ -1,11 +1,12 @@
 dependencies{
+	compile("org.springframework.data:spring-data-elasticsearch:1.2.0.RELEASE")
+	compile("org.springframework.data:spring-data-redis:1.5.0.RELEASE")
+	compile("net.sourceforge.jline:jline:1.0.S2-B")
 	compile("org.springframework.data:spring-data-gemfire:1.6.0.RELEASE")
 	compile("com.gemstone.gemfire:gemfire:8.1.0")
+}
 
-	repositories{
-		maven{
-			url "http://repo.spring.io/gemstone-release-cache/"
-		}
-	}
-	compile("org.springframework.data:spring-data-jpa:1.8.0.RELEASE")
+jar{
+   baseName = 'cruiser-data'
+   version 	= '1.0'
 }

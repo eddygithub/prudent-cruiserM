@@ -9,7 +9,19 @@ subprojects{
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 	
+	ext {
+	}
+	
+	dependencies {
+		testCompile("org.springframework:spring-test:4.1.6.RELEASE")
+		testCompile("junit:junit:4.+")
+	}
+	
 	repositories{
+		jcenter()
+	    mavenLocal()
 		mavenCentral()
+		maven{url "http://repo.spring.io/gemstone-release-cache/"}
+		maven{url "http://repo.spring.io/simple/ext-release-local/"}
 	}
 }

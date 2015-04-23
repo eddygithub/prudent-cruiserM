@@ -1,6 +1,10 @@
 apply plugin: 'war'
 ext.versionFile = file('version.properties')
 
+dependencies{
+	compile("org.thymeleaf:thymeleaf-spring3:2.1.4.RELEASE")
+}
+
 task loadVersion {
     project.version = readVersion()
 }
