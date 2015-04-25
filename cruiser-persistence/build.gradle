@@ -1,5 +1,11 @@
 dependencies {
 	compile("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final")
+	compile("org.hibernate:hibernate-core:4.3.9.Final")
+	compile("org.hibernate:hibernate-entitymanager:4.3.9.Final")
+	compile("org.springframework:spring-context:4.1.6.RELEASE")
+	compile("org.springframework.data:spring-data-jpa:1.8.0.RELEASE")
+	compile("postgresql:postgresql:9.1-901-1.jdbc4")
+	testCompile("com.h2database:h2:1.4.187")
 }
 
 jar {
