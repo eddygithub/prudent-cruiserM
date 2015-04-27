@@ -11,6 +11,10 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @EnableElasticsearchRepositories(basePackages="com.prudent.office.data.store.es.repository")
 public class ElasticSearchConfig {
 
+	/**
+	 * Set up embedded Elasticsearch server
+	 * @return
+	 */
 	@Bean
 	public ElasticsearchOperations establElasticsearchTemplate(){
 		return new ElasticsearchTemplate(NodeBuilder.nodeBuilder().local(true).node().client());
