@@ -4,11 +4,11 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.prudent.web.WebConfig;
 
-public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class CustomerDBWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
   
   @Override
   protected Class<?>[] getRootConfigClasses() {
-    return new Class<?>[] { RootConfig.class };
+    return new Class<?>[] { RootConfig.class};
   }
 
   @Override
