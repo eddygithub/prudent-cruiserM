@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 @Configuration
-@EnableElasticsearchRepositories(basePackages="com.prudent.office.data.store.es.repository")
+@EnableElasticsearchRepositories(basePackages="com.prudent.data.customerData.es.repository")
 public class ElasticSearchConfig {
 
 	/**
@@ -16,7 +16,7 @@ public class ElasticSearchConfig {
 	 * @return
 	 */
 	@Bean
-	public ElasticsearchOperations establElasticsearchTemplate(){
-		return new ElasticsearchTemplate(NodeBuilder.nodeBuilder().local(true).node().client());
-	}
+	public ElasticsearchOperations elasticsearchTemplate() {
+        return new ElasticsearchTemplate(NodeBuilder.nodeBuilder().node().client());
+    }
 }
