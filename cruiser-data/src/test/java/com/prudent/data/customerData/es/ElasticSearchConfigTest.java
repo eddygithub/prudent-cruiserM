@@ -6,7 +6,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.Date;
 
 import org.hamcrest.core.Is;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,13 @@ public class ElasticSearchConfigTest {
 	@Autowired
 	CustomerRepository customerRepository;
 
-	@Before
-	public void before() {
-		elasticsearchTemplate.deleteIndex(Customer.class);
-		elasticsearchTemplate.createIndex(Customer.class);
-		elasticsearchTemplate.putMapping(Customer.class);
-		elasticsearchTemplate.refresh(Customer.class, true);
-	}
+//	@Before
+//	public void before() {
+//		elasticsearchTemplate.deleteIndex(Customer.class);
+//		elasticsearchTemplate.createIndex(Customer.class);
+//		elasticsearchTemplate.putMapping(Customer.class);
+//		elasticsearchTemplate.refresh(Customer.class, true);
+//	}
 
 	@Test
 	public void notNull() {
