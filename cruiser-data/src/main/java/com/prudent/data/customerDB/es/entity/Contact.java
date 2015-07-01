@@ -1,5 +1,8 @@
 package com.prudent.data.customerDB.es.entity;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName="prudentcpa", type="contact")
 public class Contact {
 	private String method;
 	private String information;

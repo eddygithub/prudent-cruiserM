@@ -1,0 +1,2 @@
+cluster.name:eddy-es-cluster1
+node.data:false

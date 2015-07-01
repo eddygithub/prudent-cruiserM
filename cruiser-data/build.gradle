@@ -1,14 +1,31 @@
 dependencies{
-	compile("org.springframework.data:spring-data-elasticsearch:1.2.0.RELEASE")
-	compile("org.codehaus.groovy:groovy-all:2.4.3") 
-	compile("org.apache.lucene:lucene-expressions:4.10.3")
-	compile("org.springframework.data:spring-data-redis:1.5.0.RELEASE")
-	compile("net.sourceforge.jline:jline:1.0.S2-B")
-	compile("org.springframework.data:spring-data-gemfire:1.6.0.RELEASE")
+	compile("org.elasticsearch:elasticsearch:1.5.0")
+	compile("org.springframework.boot:spring-boot-starter-data-elasticsearch"){
+		exclude module: 'elasticsearch';
+	}
+	compile("org.springframework.boot:spring-boot-starter-data-gemfire")
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile("org.springframework.boot:spring-boot-starter-redis")
 	compile("com.gemstone.gemfire:gemfire:8.1.0")
+	compile("org.apache.tika:tika-core:1.9")
 }
 
 jar{
-   baseName = 'cruiser-data'
-   version 	= '1.0'
+	baseName = 'cruiser-data'
+	version 	= '1.0'
+}
+
+buildscript{
+	ext{ springBootVersion = '1.2.3.RELEASE'}
+	repositories{
+		jcenter()
+		mavenLocal()
+		mavenCentral()
+		maven{url "http://repo.spring.io/gemstone-release-cache/"}
+		maven{url "http://repo.spring.io/simple/ext-release-local/"}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.0.RELEASE")
+	}
 }
